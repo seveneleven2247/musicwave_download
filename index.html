@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MusicWave 是一款 macOS 桌面音乐可视化工具，让波形随音乐的音量与节奏实时变化。">
+  <meta name="theme-color" content="#08090a">
+  <title>MusicWave - 让桌面跟随音乐呼吸</title>
+  <link rel="icon" href="assets/musicwave-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回 MusicWave 首页">
+      <img src="assets/musicwave-icon.png" alt="">
+      <span>MusicWave</span>
+    </a>
+    <a class="header-download" href="downloads/MusicWave-1.8.dmg" download="MusicWave-1.8.dmg">下载</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <canvas id="wave-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <img class="app-icon" src="assets/musicwave-icon.png" alt="MusicWave 应用图标">
+        <p class="eyebrow">专为 macOS 设计</p>
+        <h1>MusicWave</h1>
+        <p class="hero-copy">让桌面跟随音乐呼吸。</p>
+        <p class="hero-description">播放时出现，暂停后隐去。波形会随着音量和节奏自然变化，同时避开应用窗口与桌面组件。</p>
+        <div class="hero-actions">
+          <a class="download-button" href="downloads/MusicWave-1.8.dmg" download="MusicWave-1.8.dmg" data-download>
+            <span class="download-symbol" aria-hidden="true">↓</span>
+            <span>下载 macOS 版</span>
+          </a>
+          <a class="text-link" href="#experience">查看界面</a>
+        </div>
+        <p class="release-meta">版本 1.8 · macOS 13 或更高版本 · 约 496 KB</p>
+      </div>
+      <a class="scroll-cue" href="#experience" aria-label="继续查看 MusicWave">
+        <span>了解 MusicWave</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="section-heading">
+        <p class="section-kicker">简单，但不单调</p>
+        <h2>一个波形，跟上每一拍。</h2>
+        <p>MusicWave 是一款 macOS 桌面音乐可视化工具。它读取正在播放的音乐状态与系统声音强度，在桌面上呈现有规律的动态波形。</p>
+      </div>
+
+      <figure class="product-shot">
+        <img src="assets/player-settings.png" alt="MusicWave 播放器选择设置界面">
+        <figcaption>分别选择 Apple Music、QQ 音乐、网易云音乐或 Spotify。</figcaption>
+      </figure>
+    </section>
+
+    <section class="features" aria-label="MusicWave 核心功能">
+      <div class="feature-grid">
+        <article>
+          <span class="feature-number">01</span>
+          <h3>自动感应</h3>
+          <p>音乐开始时自动显示，暂停或停止后自动消失。</p>
+        </article>
+        <article>
+          <span class="feature-number">02</span>
+          <h3>声音响应</h3>
+          <p>根据音量、频谱和节奏改变波形的大小与速度。</p>
+        </article>
+        <article>
+          <span class="feature-number">03</span>
+          <h3>保持专注</h3>
+          <p>可在桌面层显示，不覆盖正在使用的应用和桌面组件。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="players" aria-labelledby="players-title">
+      <div class="players-copy">
+        <p class="section-kicker">按你的方式播放</p>
+        <h2 id="players-title">四个播放器，逐个选择。</h2>
+        <p>每个播放器都有独立开关。关闭波纹或退出 MusicWave，不会暂停正在播放的音乐。</p>
+      </div>
+      <ul class="player-list" aria-label="支持的音乐播放器">
+        <li>Apple Music</li>
+        <li>QQ 音乐</li>
+        <li>网易云音乐</li>
+        <li>Spotify</li>
+      </ul>
+    </section>
+
+    <section class="install" aria-labelledby="install-title">
+      <div class="section-heading compact">
+        <p class="section-kicker">安装</p>
+        <h2 id="install-title">三步开始。</h2>
+      </div>
+      <ol class="install-steps">
+        <li><span>1</span><p>下载并打开 DMG。</p></li>
+        <li><span>2</span><p>将 MusicWave 拖入 Applications。</p></li>
+        <li><span>3</span><p>打开应用，选择需要监听的播放器。</p></li>
+      </ol>
+    </section>
+
+    <section class="final-download" aria-labelledby="download-title">
+      <img src="assets/musicwave-icon.png" alt="">
+      <div>
+        <p class="section-kicker">MusicWave 1.8</p>
+        <h2 id="download-title">让下一首歌，看得见。</h2>
+      </div>
+      <a class="download-button light" href="downloads/MusicWave-1.8.dmg" download="MusicWave-1.8.dmg" data-download>
+        <span class="download-symbol" aria-hidden="true">↓</span>
+        <span>下载 MusicWave</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 MusicWave</span>
+    <span>为 macOS 制作</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
