@@ -105,8 +105,103 @@ reduceMotion.addEventListener("change", () => {
   else requestAnimationFrame(animate);
 });
 
+const platformNames = {
+  macos: "macOS",
+  windows: "Windows"
+};
+
+function updatePlatformLinks(platform, release) {
+  document.querySelectorAll(`[data-platform-download="${platform}"]`).forEach((link) => {
+    const label = link.querySelector("span:last-child");
+    const versionLabel = label?.matches("[data-platform-version]");
+
+    if (release.available && release.url) {
+      link.href = new URL(release.url, window.location.href).href;
+      link.classList.remove("unavailable");
+      link.removeAttribute("aria-disabled");
+      if (release.fileName) link.setAttribute("download", release.fileName);
+      if (label) {
+        label.textContent = versionLabel
+          ? `${platformNames[platform]} ${release.version}`
+          : `下载 ${platformNames[platform]} 版`;
+      }
+      return;
+    }
+
+    link.href = `#release-${platform}`;
+    link.classList.add("unavailable");
+    link.setAttribute("aria-disabled", "true");
+    link.removeAttribute("download");
+    if (label) {
+      label.textContent = versionLabel
+        ? `${platformNames[platform]} ${release.version} 准备中`
+        : platform === "windows" ? "Windows 版准备中" : `${platformNames[platform]} 版准备中`;
+    }
+  });
+}
+
+function updateReleaseCard(platform, release) {
+  const card = document.querySelector(`[data-release-card="${platform}"]`);
+  if (!card) return;
+
+  const version = card.querySelector("[data-release-version]");
+  const status = card.querySelector("[data-release-status]");
+  const system = card.querySelector("[data-release-system]");
+  const notes = card.querySelector("[data-release-notes]");
+
+  if (version) version.textContent = release.version;
+  if (system) system.textContent = [release.minimumSystem, release.size].filter(Boolean).join(" · ");
+  if (status) {
+    status.textContent = release.available ? "可以下载" : "准备发布";
+    status.classList.toggle("available", release.available);
+    status.classList.toggle("pending", !release.available);
+  }
+  if (notes) {
+    notes.replaceChildren();
+    (release.notes || []).forEach((note) => {
+      const item = document.createElement("li");
+      item.textContent = note;
+      notes.append(item);
+    });
+  }
+}
+
+async function loadReleaseManifest() {
+  try {
+    const response = await fetch(`version.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Version manifest returned ${response.status}`);
+    const manifest = await response.json();
+
+    ["macos", "windows"].forEach((platform) => {
+      const release = manifest[platform];
+      if (!release) return;
+      updatePlatformLinks(platform, release);
+      updateReleaseCard(platform, release);
+    });
+
+    const summary = document.querySelector("[data-release-summary]");
+    if (summary) {
+      const windowsState = manifest.windows?.available ? "" : " 准备中";
+      summary.textContent = `macOS ${manifest.macos.version} · Windows ${manifest.windows.version}${windowsState} · 支持四个音乐播放器`;
+    }
+
+    const updated = document.querySelector("[data-release-updated]");
+    if (updated && manifest.updatedAt) {
+      const updatedDate = new Date(manifest.updatedAt);
+      updated.textContent = `版本信息更新于 ${updatedDate.toLocaleDateString("zh-CN", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      })}`;
+    }
+  } catch (error) {
+    console.warn("MusicWave version information could not be loaded.", error);
+  }
+}
+
 document.querySelectorAll("[data-download]").forEach((link) => {
   link.addEventListener("click", () => {
+    if (link.getAttribute("aria-disabled") === "true") return;
     const label = link.querySelector("span:last-child");
     if (!label) return;
     const original = label.textContent;
@@ -119,3 +214,4 @@ document.querySelectorAll("[data-download]").forEach((link) => {
 
 resizeCanvas();
 requestAnimationFrame(animate);
+loadReleaseManifest();

@@ -157,7 +157,7 @@ a {
   margin-top: 28px;
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 14px;
 }
 
 .download-button {
@@ -180,6 +180,29 @@ a {
 .download-button:hover {
   transform: translateY(-2px);
   background: #e9fbfd;
+}
+
+.download-button.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: transparent;
+  color: var(--white);
+  box-shadow: none;
+}
+
+.download-button.secondary:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.download-button.unavailable,
+.release-link.unavailable {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
+.download-button.unavailable:hover,
+.release-link.unavailable:hover {
+  transform: none;
 }
 
 .download-button:active {
@@ -329,6 +352,106 @@ a {
   color: #006c76;
 }
 
+.releases {
+  padding: 108px 24px;
+  background: #eef0f2;
+}
+
+.release-grid {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.release-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid rgba(17, 19, 21, 0.12);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.release-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.release-platform {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.release-card h3 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.release-status {
+  padding: 6px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+
+.release-status.available {
+  background: #d9efdf;
+  color: #17632f;
+}
+
+.release-status.pending {
+  background: #eceef0;
+  color: #626870;
+}
+
+.release-system {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.release-notes {
+  min-height: 112px;
+  margin: 22px 0;
+  padding-left: 19px;
+  color: #3f454c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.release-link {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid rgba(17, 19, 21, 0.22);
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.release-link:not(.unavailable):hover {
+  border-color: var(--ink);
+  background: #f4f6f7;
+}
+
+.release-updated {
+  min-height: 18px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
 .player-list {
   margin: 0;
   padding: 0;
@@ -429,6 +552,15 @@ a {
   box-shadow: none;
 }
 
+.download-options {
+  display: flex;
+  gap: 12px;
+}
+
+.download-options .download-button.secondary {
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
 footer {
   min-height: 86px;
   padding: 0 max(24px, calc((100% - 1120px) / 2));
@@ -512,6 +644,10 @@ a:focus-visible {
     gap: 46px;
   }
 
+  .release-grid {
+    grid-template-columns: 1fr;
+  }
+
   .install-steps {
     grid-template-columns: 1fr;
   }
@@ -536,6 +672,10 @@ a:focus-visible {
   }
 
   .final-download .download-button {
+    width: 100%;
+  }
+
+  .download-options {
     grid-column: 1 / -1;
     width: 100%;
   }
@@ -566,8 +706,16 @@ a:focus-visible {
     gap: 15px;
   }
 
+  .hero-actions .text-link {
+    margin-top: 2px;
+  }
+
   .download-button {
     width: 100%;
+  }
+
+  .download-options {
+    flex-direction: column;
   }
 
   .release-meta {
@@ -577,6 +725,7 @@ a:focus-visible {
   .experience,
   .features,
   .players,
+  .releases,
   .install {
     padding-top: 78px;
     padding-bottom: 78px;
