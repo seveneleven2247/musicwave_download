@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T22:15:44+08:00",
+  "updatedAt": "2026-08-07T22:44:43+08:00",
   "macos": {
     "available": true,
-    "version": "1.8",
-    "build": 12,
+    "version": "1.9",
+    "build": 13,
     "minimumSystem": "macOS 13 or later",
-    "size": "About 521 KB",
-    "url": "downloads/MusicWave-1.8.dmg",
-    "fileName": "MusicWave-1.8.dmg",
+    "size": "About 508 KB",
+    "url": "downloads/MusicWave-1.9.dmg",
+    "fileName": "MusicWave-1.9.dmg",
     "notes": [
-      "Supports Apple Music, QQ Music, NetEase Cloud Music, and Spotify",
-      "Reacts to system volume, spectrum, and rhythm",
-      "Includes player selection, desktop-layer mode, and fullscreen fog"
+      "Adds 17 solid, gradient, and high-contrast waveform themes",
+      "Waveform now spans the full width of the selected screen",
+      "Continues to react to system volume, spectrum, and rhythm"
     ]
   },
   "windows": {
     "available": true,
-    "version": "1.0.0",
-    "build": 1,
+    "version": "1.1.0",
+    "build": 2,
     "minimumSystem": "Windows 10 / 11 x64",
     "size": "About 72 MB",
-    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.0.0-windows/MusicWave-Windows-1.0-x64.zip",
-    "fileName": "MusicWave-Windows-1.0-x64.zip",
+    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.1.0-windows/MusicWave-Windows-1.1.0-x64.zip",
+    "fileName": "MusicWave-Windows-1.1.0-x64.zip",
     "notes": [
-      "First public Windows release",
-      "Supports system media sessions and real-time WASAPI audio analysis",
+      "Adds 17 solid, gradient, and high-contrast waveform themes",
+      "Waveform now spans the full width of the selected screen",
       "Self-contained x64 build; no separate .NET installation required",
       "Windows SmartScreen may request confirmation because this build is not code-signed"
     ]

@@ -13,8 +13,8 @@ MusicWave is a desktop music visualizer for macOS and Windows. The waveform reac
 
 Open the GitHub Pages or Cloudflare Pages website, or get the latest installer from the `downloads` directory.
 
-- macOS: MusicWave 1.8
-- Windows: MusicWave 1.0 x64
+- macOS: MusicWave 1.9
+- Windows: MusicWave 1.1.0 x64
 
 ## Publishing a New Version
 
