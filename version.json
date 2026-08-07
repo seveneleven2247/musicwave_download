@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T21:30:00+08:00",
+  "updatedAt": "2026-08-07T22:15:44+08:00",
   "macos": {
     "available": true,
     "version": "1.8",
@@ -16,17 +16,18 @@
     ]
   },
   "windows": {
-    "available": false,
+    "available": true,
     "version": "1.0.0",
     "build": 1,
     "minimumSystem": "Windows 10 / 11 x64",
     "size": "About 72 MB",
-    "url": "",
+    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.0.0-windows/MusicWave-Windows-1.0-x64.zip",
     "fileName": "MusicWave-Windows-1.0-x64.zip",
     "notes": [
-      "The Windows build is complete",
+      "First public Windows release",
       "Supports system media sessions and real-time WASAPI audio analysis",
-      "Public download package coming soon"
+      "Self-contained x64 build; no separate .NET installation required",
+      "Windows SmartScreen may request confirmation because this build is not code-signed"
     ]
   }
 }
