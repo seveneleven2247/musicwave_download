@@ -1,25 +1,25 @@
 # MusicWave Download
 
-MusicWave 是一款 macOS 与 Windows 桌面音乐可视化工具。音乐播放时，波形会根据音量与节奏变化；暂停后自动隐去。
+MusicWave is a desktop music visualizer for macOS and Windows. The waveform reacts to volume and rhythm while music is playing, then disappears automatically when playback pauses.
 
-## 支持播放器
+## Supported Players
 
 - Apple Music
-- QQ 音乐
-- 网易云音乐
+- QQ Music
+- NetEase Cloud Music
 - Spotify
 
-## 下载
+## Downloads
 
-打开 GitHub Pages 下载页面，或在 `downloads` 目录获取最新版安装包。
+Open the GitHub Pages or Cloudflare Pages website, or get the latest installer from the `downloads` directory.
 
-- macOS：MusicWave 1.8
-- Windows：MusicWave 1.0 x64
+- macOS: MusicWave 1.8
+- Windows: MusicWave 1.0 x64
 
-## 发布新版本
+## Publishing a New Version
 
-1. 上传新的 DMG 或 Windows ZIP。
-2. 修改 `version.json` 中对应平台的版本号、下载地址和更新说明。
-3. 提交并推送到 GitHub；Cloudflare Pages 会自动重新部署。
+1. Upload the new DMG or Windows ZIP.
+2. Update the version number, download URL, and release notes in `version.json`.
+3. Commit and push to GitHub. Cloudflare Pages deploys the update automatically.
 
-页面不会把版本号写死在 HTML 中。`script.js` 会读取 `version.json`，更新下载按钮、版本卡片和更新内容。
+Version numbers are not hard-coded in the page. `script.js` reads `version.json` and updates the download buttons, release cards, and release notes.

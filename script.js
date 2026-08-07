@@ -123,7 +123,7 @@ function updatePlatformLinks(platform, release) {
       if (label) {
         label.textContent = versionLabel
           ? `${platformNames[platform]} ${release.version}`
-          : `下载 ${platformNames[platform]} 版`;
+          : `Download for ${platformNames[platform]}`;
       }
       return;
     }
@@ -134,8 +134,8 @@ function updatePlatformLinks(platform, release) {
     link.removeAttribute("download");
     if (label) {
       label.textContent = versionLabel
-        ? `${platformNames[platform]} ${release.version} 准备中`
-        : platform === "windows" ? "Windows 版准备中" : `${platformNames[platform]} 版准备中`;
+        ? `${platformNames[platform]} ${release.version} Coming Soon`
+        : `${platformNames[platform]} Coming Soon`;
     }
   });
 }
@@ -152,7 +152,7 @@ function updateReleaseCard(platform, release) {
   if (version) version.textContent = release.version;
   if (system) system.textContent = [release.minimumSystem, release.size].filter(Boolean).join(" · ");
   if (status) {
-    status.textContent = release.available ? "可以下载" : "准备发布";
+    status.textContent = release.available ? "Available" : "Coming Soon";
     status.classList.toggle("available", release.available);
     status.classList.toggle("pending", !release.available);
   }
@@ -181,14 +181,14 @@ async function loadReleaseManifest() {
 
     const summary = document.querySelector("[data-release-summary]");
     if (summary) {
-      const windowsState = manifest.windows?.available ? "" : " 准备中";
-      summary.textContent = `macOS ${manifest.macos.version} · Windows ${manifest.windows.version}${windowsState} · 支持四个音乐播放器`;
+      const windowsState = manifest.windows?.available ? "" : " coming soon";
+      summary.textContent = `macOS ${manifest.macos.version} · Windows ${manifest.windows.version}${windowsState} · Four supported players`;
     }
 
     const updated = document.querySelector("[data-release-updated]");
     if (updated && manifest.updatedAt) {
       const updatedDate = new Date(manifest.updatedAt);
-      updated.textContent = `版本信息更新于 ${updatedDate.toLocaleDateString("zh-CN", {
+      updated.textContent = `Version information updated ${updatedDate.toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric"
@@ -205,7 +205,7 @@ document.querySelectorAll("[data-download]").forEach((link) => {
     const label = link.querySelector("span:last-child");
     if (!label) return;
     const original = label.textContent;
-    label.textContent = "正在下载…";
+    label.textContent = "Downloading...";
     window.setTimeout(() => {
       label.textContent = original;
     }, 1800);

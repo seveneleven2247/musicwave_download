@@ -5,14 +5,14 @@
     "available": true,
     "version": "1.8",
     "build": 12,
-    "minimumSystem": "macOS 13 或更高版本",
-    "size": "约 496 KB",
+    "minimumSystem": "macOS 13 or later",
+    "size": "About 521 KB",
     "url": "downloads/MusicWave-1.8.dmg",
     "fileName": "MusicWave-1.8.dmg",
     "notes": [
-      "支持 Apple Music、QQ 音乐、网易云音乐和 Spotify",
-      "波纹根据系统声音大小、频谱与节奏变化",
-      "加入播放器选择、桌面层与全屏雾化设置"
+      "Supports Apple Music, QQ Music, NetEase Cloud Music, and Spotify",
+      "Reacts to system volume, spectrum, and rhythm",
+      "Includes player selection, desktop-layer mode, and fullscreen fog"
     ]
   },
   "windows": {
@@ -20,13 +20,13 @@
     "version": "1.0.0",
     "build": 1,
     "minimumSystem": "Windows 10 / 11 x64",
-    "size": "约 72 MB",
+    "size": "About 72 MB",
     "url": "",
     "fileName": "MusicWave-Windows-1.0-x64.zip",
     "notes": [
-      "Windows 版本已完成本地构建",
-      "支持系统媒体会话与 WASAPI 实时音频分析",
-      "公开下载包准备中"
+      "The Windows build is complete",
+      "Supports system media sessions and real-time WASAPI audio analysis",
+      "Public download package coming soon"
     ]
   }
 }
