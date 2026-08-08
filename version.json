@@ -21,7 +21,7 @@
     "build": 3,
     "minimumSystem": "Windows 10 / 11 x64",
     "size": "About 72 MB",
-    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.2.0-windows/MusicWave-Windows-1.2.0-x64.zip",
+    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/musicapp/MusicWave-Windows-1.2.0-x64.zip",
     "fileName": "MusicWave-Windows-1.2.0-x64.zip",
     "notes": [
       "Adds Spotify Web, YouTube, YouTube Music, and QQ Music Web support",
