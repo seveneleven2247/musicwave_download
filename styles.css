@@ -293,6 +293,38 @@ a {
   text-align: center;
 }
 
+.guide {
+  padding: 108px 24px 112px;
+  color: var(--white);
+  background: #090b0e;
+}
+
+.guide .section-heading > p:last-child {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.guide-player {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.guide-player video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #050608;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.38);
+}
+
+.guide-player figcaption {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 13px;
+  text-align: center;
+}
+
 .features {
   padding: 0 24px 112px;
   background: var(--paper);
@@ -723,6 +755,7 @@ a:focus-visible {
   }
 
   .experience,
+  .guide,
   .features,
   .players,
   .releases,
@@ -746,6 +779,10 @@ a:focus-visible {
   }
 
   .product-shot figcaption {
+    line-height: 1.6;
+  }
+
+  .guide-player figcaption {
     line-height: 1.6;
   }
 
