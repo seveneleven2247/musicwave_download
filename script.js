@@ -107,7 +107,8 @@ reduceMotion.addEventListener("change", () => {
 
 const platformNames = {
   macos: "macOS",
-  windows: "Windows"
+  windows: "Windows",
+  connector: "Web Connector"
 };
 
 function updatePlatformLinks(platform, release) {
@@ -172,17 +173,17 @@ async function loadReleaseManifest() {
     if (!response.ok) throw new Error(`Version manifest returned ${response.status}`);
     const manifest = await response.json();
 
-    ["macos", "windows"].forEach((platform) => {
+    ["macos", "windows", "connector"].forEach((platform) => {
       const release = manifest[platform];
       if (!release) return;
       updatePlatformLinks(platform, release);
-      updateReleaseCard(platform, release);
+      if (platform !== "connector") updateReleaseCard(platform, release);
     });
 
     const summary = document.querySelector("[data-release-summary]");
     if (summary) {
       const windowsState = manifest.windows?.available ? "" : " coming soon";
-      summary.textContent = `macOS ${manifest.macos.version} · Windows ${manifest.windows.version}${windowsState} · Four supported players`;
+      summary.textContent = `macOS ${manifest.macos.version} · Windows ${manifest.windows.version}${windowsState} · Seven supported sources`;
     }
 
     const updated = document.querySelector("[data-release-updated]");

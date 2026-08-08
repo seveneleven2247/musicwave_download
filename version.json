@@ -1,33 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T22:44:43+08:00",
+  "updatedAt": "2026-08-08T12:02:00+08:00",
   "macos": {
     "available": true,
-    "version": "1.9",
-    "build": 13,
+    "version": "2.0",
+    "build": 14,
     "minimumSystem": "macOS 13 or later",
-    "size": "About 508 KB",
-    "url": "downloads/MusicWave-1.9.dmg",
-    "fileName": "MusicWave-1.9.dmg",
+    "size": "About 540 KB",
+    "url": "downloads/MusicWave-2.0.dmg",
+    "fileName": "MusicWave-2.0.dmg",
     "notes": [
-      "Adds 17 solid, gradient, and high-contrast waveform themes",
-      "Waveform now spans the full width of the selected screen",
-      "Continues to react to system volume, spectrum, and rhythm"
+      "Adds Spotify Web, YouTube, YouTube Music, and QQ Music Web support",
+      "Separates desktop players and browser players in Settings",
+      "Keeps waveform intensity driven by local system audio"
     ]
   },
   "windows": {
     "available": true,
-    "version": "1.1.0",
-    "build": 2,
+    "version": "1.2.0",
+    "build": 3,
     "minimumSystem": "Windows 10 / 11 x64",
     "size": "About 72 MB",
-    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.1.0-windows/MusicWave-Windows-1.1.0-x64.zip",
-    "fileName": "MusicWave-Windows-1.1.0-x64.zip",
+    "url": "https://github.com/seveneleven2247/musicwave_download/releases/download/v1.2.0-windows/MusicWave-Windows-1.2.0-x64.zip",
+    "fileName": "MusicWave-Windows-1.2.0-x64.zip",
     "notes": [
-      "Adds 17 solid, gradient, and high-contrast waveform themes",
-      "Waveform now spans the full width of the selected screen",
+      "Adds Spotify Web, YouTube, YouTube Music, and QQ Music Web support",
+      "Separates desktop players and browser players in Settings",
       "Self-contained x64 build; no separate .NET installation required",
       "Windows SmartScreen may request confirmation because this build is not code-signed"
     ]
+  },
+  "connector": {
+    "available": true,
+    "version": "1.0.0",
+    "minimumSystem": "Chrome or Microsoft Edge",
+    "size": "About 10 KB",
+    "url": "downloads/MusicWave-Web-Connector-1.0.0.zip",
+    "fileName": "MusicWave-Web-Connector-1.0.0.zip"
   }
 }

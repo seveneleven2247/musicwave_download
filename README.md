@@ -1,6 +1,6 @@
 # MusicWave Download
 
-MusicWave is a desktop music visualizer for macOS and Windows. The waveform reacts to volume and rhythm while music is playing, then disappears automatically when playback pauses.
+MusicWave is a desktop music visualizer for macOS and Windows. The waveform reacts to volume and rhythm while music is playing, then disappears automatically when playback pauses. MusicWave Web Connector adds local playback-state support for selected browser players.
 
 ## Supported Players
 
@@ -8,13 +8,17 @@ MusicWave is a desktop music visualizer for macOS and Windows. The waveform reac
 - QQ Music
 - NetEase Cloud Music
 - Spotify
+- Spotify Web
+- YouTube and YouTube Music
+- QQ Music Web
 
 ## Downloads
 
 Open the GitHub Pages or Cloudflare Pages website, or get the latest installer from the `downloads` directory.
 
-- macOS: MusicWave 1.9
-- Windows: MusicWave 1.1.0 x64
+- macOS: MusicWave 2.0
+- Windows: MusicWave 1.2.0 x64
+- Chrome / Edge: MusicWave Web Connector 1.0.0
 
 ## Publishing a New Version
 
